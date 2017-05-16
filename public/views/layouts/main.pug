@@ -1,0 +1,15 @@
+html
+    head
+        block variables
+        meta(name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0")
+        title Test Task - #{title}
+        link(rel='stylesheet' href='/public/css/bootstrap.min.css')
+        link(rel='stylesheet' href='/public/css/dataTables.bootstrap.min.css')
+        script(src='http://code.jquery.com/jquery-2.0.3.min.js')
+        script(src='/public/js/jquery.dataTables.min.js')
+        script(src='/public/js/bootstrap.min.js')
+        script(src='/public/js/dataTables.bootstrap.min.js')
+        script(src='/public/js/main.js')
+    body
+        .container
+            block content

@@ -1,0 +1,7 @@
+extends ./layouts/main
+
+block variables
+    - var title = err.message;
+
+block content
+    .alert.alert-danger=err.message

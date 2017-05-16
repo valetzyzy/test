@@ -1,0 +1,23 @@
+extends ../layouts/main
+
+block variables
+    - var title = 'All'
+
+block content
+    h3 Employees
+        table.table.table-bordered#employeesTable
+            thead
+                tr
+                    td Name
+                    td Is active
+                    td Department Name
+                    td Actions
+            tbody
+                each employee in employees
+                    tr
+                        td=employee.empName
+                        td=(employee.empActive) ? 'True' : 'False'
+                        td=employee.dpName
+                        td
+                            a(href=`/edit/${employee.empID}`).btn.btn-default Edit
+                            button(data-id=employee.empID).btn.btn-default#delete-btn Delete

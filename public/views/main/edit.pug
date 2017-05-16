@@ -1,0 +1,24 @@
+extends ../layouts/main
+
+block variables
+    - var title = 'Edit ' + employee.empName
+    - var checked = (employee.empActive ? 'checked' : '');
+
+block content
+    form(action=`/edit/${employee.empID}` method='post')
+        .form-group
+            label(for='empName') Employee Name
+            input.form-control#empName(name='empName' value=employee.empName)
+        .form-group
+            label(for='empActive') Employee Is Active
+            // @todo: Fix checkbox
+            input.form-control#empActive(type='checkbox' name='empActive' checked value='1')
+        .form-group
+            label(for='department') Department
+            select.form-control#department(name='emp_dpID')
+                each department in departments
+                    option(value=department.dpID)=department.dpName
+
+        button.btn.btn-success(type='submit') Save
+
+
